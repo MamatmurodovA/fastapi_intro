@@ -24,13 +24,13 @@ class Item(BaseModel):
 class Offer(BaseModel):
     name: str
     description: Union[str, None] = None
-    items: Union[List[Item], None] = None
+    price: float
+    items: List[Item]
 
 
 @app.post('/items/')
 def create_offer(offer: Offer):
-    results = {}
-    return results
+    return offer
 
 
 if __name__ == "__main__":
